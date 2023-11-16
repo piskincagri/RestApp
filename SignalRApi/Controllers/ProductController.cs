@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using SignaIR.DataAccessLayer.Concrete;
 using SignaIR.DtoLayer.ProductDto;
 using SignaIR.EntitiyLayer.Entities;
 using SignalR.BussinesLayer.Abstract;
@@ -33,6 +35,27 @@ namespace SignalRApi.Controllers
             return Ok(value);
 
         }
+
+        [HttpGet("ProductListWithCategory")]
+        public IActionResult ProductListWithCategory ()
+        {
+            var context = new SignalRContext();
+            var values = context.Products.Include(x => x.Category).Select(y => new ResultProductWithCategory
+            {
+                Description = y.Description,
+                ImageURL = y.ImageURL,
+                Price = y.Price,
+                ProductID = y.ProductID,
+                ProductName = y.ProductName,
+                CategoryName = y.Category.CategoryName
+
+            });
+            return Ok (values.ToList());
+          
+
+        }
+
+
 
         [HttpPost]
 

@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SignalIR.DtoLayer\SignaIR.DtoLayer.csproj" />
     <ProjectReference Include="..\SignalIR.EntitiyLayer\SignaIR.EntitiyLayer.csproj" />
   </ItemGroup>
 

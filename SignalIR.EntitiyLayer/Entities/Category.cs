@@ -13,5 +13,7 @@ namespace SignaIR.EntitiyLayer.Entities
 
         public bool Status { get; set; }
 
+        public List<Product> Products { get; set; }
+
     }
 }
