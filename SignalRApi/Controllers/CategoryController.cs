@@ -35,7 +35,6 @@ namespace SignalRApi.Controllers
         }
 
         [HttpPost]
-
         public IActionResult CreateCategory(CreateCategoryDto createCategoryDto)
         {
             _categoryService.TAdd(new Category()
@@ -50,7 +49,7 @@ namespace SignalRApi.Controllers
 
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteCategory(int id)
         {
 
@@ -61,7 +60,7 @@ namespace SignalRApi.Controllers
 
         }
 
-        [HttpGet("GetCategory")]
+        [HttpGet("{id}")]
 
         public IActionResult GetCategory(int id)
 
