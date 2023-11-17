@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace SignaIR.DtoLayer.ProductDto
+namespace SignaIRWebUI.Dtos.ProductDtos
 {
-    public class CreateProductDto
+    public class UpdateProductDto
     {
- 
+        public int ProductID { get; set; }
 
         public string ProductName { get; set; }
 

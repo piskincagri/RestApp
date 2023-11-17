@@ -1,0 +1,90 @@
+﻿@model CreateProductDto
+@{
+    ViewData["Title"] = "CreateProduct";
+    Layout = "~/Views/AdminLayoutController/Index.cshtml";
+}
+
+
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Ürün  İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Yeni Ürün Girişi</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="productname">Kategori Adı</label>
+                                <input type="text" class="form-control" asp-for="ProductName" id="productname" />
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="price">Ürün Fiyatı</label>
+                                <input type="text" class="form-control" asp-for="Price" id="price" />
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="imageUrl">Ürün Görseli</label>
+                                <input type="text" class="form-control" asp-for="ImageURL" id="imageUrl" />
+
+                            </div>
+
+
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="productstatus">Ürün Durumu</label>
+                                <input type="text" class="form-control" asp-for="ProductStatus" id="productstatus" />
+
+                            </div>
+
+
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="categoryname">Ürün Kategorisi</label>
+                               @Html.DropDownListFor(x=>x.CategoryID,(List<SelectListItem>) ViewBag.v, new  {@class="form- control" })          
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="description">Ürün Açıklaması</label>
+                                <input type="text" class="form-control" asp-for="Description" id="description" />
+
+                            </div>
+
+
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-primary btn-border btn-round">Ürün Ekle</button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+

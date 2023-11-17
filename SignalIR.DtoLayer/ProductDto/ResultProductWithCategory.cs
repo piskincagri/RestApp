@@ -22,6 +22,8 @@ namespace SignaIR.DtoLayer.ProductDto
 
         public string CategoryName { get; set; }
 
+        public int CategoryID { get; set; }
+
 
     }
 }

@@ -1,6 +1,6 @@
 using System;
 
-namespace SignalIRWebUI.Models
+namespace SignaIRWebUI.Models
 {
     public class ErrorViewModel
     {

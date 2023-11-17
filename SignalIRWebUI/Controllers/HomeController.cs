@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using SignalIRWebUI.Models;
+using SignaIRWebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
