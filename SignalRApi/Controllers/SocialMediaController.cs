@@ -53,7 +53,7 @@ namespace SignalRApi.Controllers
 
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteSocialMedia(int id)
         {
 
@@ -64,7 +64,7 @@ namespace SignalRApi.Controllers
 
         }
 
-        [HttpGet("GetSocialMedia")]
+        [HttpGet("{id}")]
 
         public IActionResult GetSocialMedia(int id)
 

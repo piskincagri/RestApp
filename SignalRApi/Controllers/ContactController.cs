@@ -52,7 +52,7 @@ namespace SignalRApi.Controllers
 
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult ContactContact(int id)
         {
 
@@ -63,7 +63,7 @@ namespace SignalRApi.Controllers
 
         }
 
-        [HttpGet("GetContact")]
+        [HttpGet("{id}")]
 
         public IActionResult GetContact(int id)
 
