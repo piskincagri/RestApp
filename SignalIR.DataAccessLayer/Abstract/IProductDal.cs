@@ -11,5 +11,18 @@ namespace SignaIR.DataAccessLayer.Abstract
     {
         List<Product> GetProductsWithCategories();
 
+        public int ProductCount();
+
+        int ProductCountByCategoryNameHamburger();
+
+        int ProductCountByCategoryNameDrink();
+
+        decimal ProductPriceAvg();
+
+        string ProductNamePriceByMax();
+
+        string ProductNamePriceByMin();
+
+        decimal ProductaAvgPriceByHamburger();
     }
 }

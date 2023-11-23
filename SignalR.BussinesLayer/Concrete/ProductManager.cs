@@ -19,6 +19,16 @@ namespace SignalR.BussinesLayer.Concrete
             _productDal = productDal;
         }
 
+        public string TProductNamePriceByMax()
+        {
+           return _productDal.ProductNamePriceByMax();
+        }
+
+        public string TProductNamePriceByMin()
+        {
+            return _productDal.ProductNamePriceByMin();
+        }
+
         public void TAdd(Product entitiy)
         {
             _productDal.Add(entitiy);
@@ -44,9 +54,34 @@ namespace SignalR.BussinesLayer.Concrete
             return _productDal.GetProductsWithCategories();
         }
 
+        public int TProductCount()
+        {
+            return _productDal.ProductCount();
+        }
+
+        public int TProductCountByCategoryNameDrink()
+        {
+            return _productDal.ProductCountByCategoryNameDrink();
+        }
+
+        public int TProductCountByCategoryNameHamburger()
+        {
+            return _productDal.ProductCountByCategoryNameHamburger();
+        }
+
+        public decimal TProductPriceAvg()
+        {
+            return _productDal.ProductPriceAvg();
+        }
+
         public void TUpdate(Product entitiy)
         {
             _productDal.Update(entitiy);
+        }
+
+        public decimal TProductAvgPriceByHamburger()
+        {
+            return _productDal.ProductaAvgPriceByHamburger();
         }
     }
 }

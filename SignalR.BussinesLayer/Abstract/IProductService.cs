@@ -12,5 +12,19 @@ namespace SignalR.BussinesLayer.Abstract
 
         List<Product>TGetProductsWithCategories();
 
+        int TProductCount();
+
+        int TProductCountByCategoryNameHamburger();
+
+        int TProductCountByCategoryNameDrink();
+
+        decimal TProductPriceAvg();
+
+        string TProductNamePriceByMax();
+
+        string TProductNamePriceByMin();
+
+        public decimal TProductAvgPriceByHamburger();
+
     }
 }

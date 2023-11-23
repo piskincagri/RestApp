@@ -12,6 +12,7 @@ using SignaIR.DataAccessLayer.Concrete;
 using SignaIR.DataAccessLayer.EntitiyFramework;
 using SignalR.BussinesLayer.Abstract;
 using SignalR.BussinesLayer.Concrete;
+using SignalRApi.Hubs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,21 @@ namespace SignalRApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddSignalR();
+            services.AddCors(options => options.AddPolicy("CorsPolicy", builder =>
+             {
+                 builder.AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .SetIsOriginAllowed((host) => true)
+                        .AllowCredentials();
+
+
+
+             }));
+                    
+                    
+
             services.AddDbContext<SignalRContext>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
@@ -63,6 +79,20 @@ namespace SignalRApi
             services.AddScoped<ITestimonialService, TestimonialManager>();
             services.AddScoped<ITestimonialDal, EfTestimonialDal>();
 
+            services.AddScoped<IOrderDetailService, OrderDetailManager>();
+            services.AddScoped<IOrderDetailDal, EfOrderDetailDal>();
+
+            services.AddScoped<IOrderService, OrderManager>();
+            services.AddScoped<IOrderDal, EfOrderDal>();
+
+            services.AddScoped<IMoneyCaseService, MoneyCaseManager>();
+            services.AddScoped<IMoneyCaseDal, EfMoneyCaseDal>();
+
+            services.AddScoped<IMenuTableService, MenuTableManager>();
+            services.AddScoped<IMenuTableDal, EfMenuTableDal>();
+
+            services.AddScoped<ISliderService, SliderManager>();
+            services.AddScoped<ISliderDal, EfSliderDal>();
 
 
 
@@ -83,15 +113,23 @@ namespace SignalRApi
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SignalRApi v1"));
             }
 
+
+
+            app.UseCors("CorsPolicy");
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthorization();
 
+            
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<SignalRHub>("/signalrhub");
+               
             });
         }
     }
