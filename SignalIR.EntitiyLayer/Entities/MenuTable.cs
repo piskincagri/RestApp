@@ -14,6 +14,8 @@ namespace SignaIR.EntitiyLayer.Entities
 
         public bool Status { get; set; }
 
+        public List<Basket> Baskets { get; set; }
+
 
     }
 }

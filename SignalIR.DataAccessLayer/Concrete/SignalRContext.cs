@@ -38,6 +38,8 @@ namespace SignaIR.DataAccessLayer.Concrete
 
         public DbSet<Slider> Sliders { get; set; }
 
+        public DbSet<Basket> Baskets { get; set; }
+
 
 
 

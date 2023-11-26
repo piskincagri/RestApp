@@ -147,14 +147,19 @@
                 data: { item: id },
                 contentType: 'json',
                 success: function () {
-                    swal("Seçilen Ürün ID:" +id , "Seçiminiz Yaptınız", "success" );
+                    Swal.fire({
+                        title: "Seçilen Ürün ID:" + id,
+                        text: "Seçiminizi Yaptınız",
+                        icon: "success"
+                    });
+                    
 ;
                 }
             });
 
         }
     </script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
