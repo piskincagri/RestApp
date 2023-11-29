@@ -15,9 +15,8 @@ namespace SignalR.BussinesLayer.Concrete
 
         public BookingManager(IBookingDal bookingDal)
         {
-            this._bookingDal = bookingDal;
+            _bookingDal = bookingDal;
         }
-
         public void TAdd(Booking entitiy)
         {
             _bookingDal.Add(entitiy);

@@ -145,11 +145,12 @@
             $.ajax({
                 type: 'post',
                 data: { item: id },
+                url: "/Menu/AddBasket/" +id,
                 contentType: 'json',
                 success: function () {
                     Swal.fire({
                         title: "Seçilen Ürün ID:" + id,
-                        text: "Seçiminizi Yaptınız",
+                        text: "Seçtiğiniz Ürün Sepete Eklendi!",
                         icon: "success"
                     });
                     

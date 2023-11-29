@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SignaIR.DataAccessLayer.Concrete;
+using SignaIR.DtoLayer.BasketDto;
+using SignaIR.EntitiyLayer.Entities;
 using SignalR.BussinesLayer.Abstract;
 using SignalRApi.Models;
 using System;
@@ -51,5 +53,34 @@ namespace SignalRApi.Controllers
             return Ok(values);
 
         }
+        [HttpPost]
+        public IActionResult CreateBasket(CreateBasketDto createBasketDto)
+        {
+            using var contex = new SignalRContext();
+            _basketService.TAdd(new Basket()
+            {
+                ProductID = createBasketDto.ProductID,
+                Count = 1,
+                MenuTableID=3,
+                Price = contex.Products.Where(x=>x.ProductID == createBasketDto.ProductID).Select(y=>y.Price).FirstOrDefault(),
+                TotalPrice=0
+               
+            });
+
+            return Ok();       
+
+
+        }
+
+        [HttpDelete("{id}")]
+
+        public IActionResult DeleteBasket(int id)
+        {
+            var value = _basketService.TGetByID(id);
+            _basketService.TDelete(value);
+            return Ok("Sepeteki seçilen ürün başarılı şekilde silindi");
+
+        }
+                
     }
 }

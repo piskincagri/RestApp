@@ -98,6 +98,11 @@ namespace SignalRApi
             services.AddScoped<IBasketService, BasketManager>();
             services.AddScoped<IBasketDal, EfBasketDal>();
 
+            services.AddScoped<INotificationService, NotificationManager>();
+            services.AddScoped<INotificationDal, EfNotificationDal>();
+
+          
+
 
             services.AddControllers().AddJsonOptions(x =>
                 x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);

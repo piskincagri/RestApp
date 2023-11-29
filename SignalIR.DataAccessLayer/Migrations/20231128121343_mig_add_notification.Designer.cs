@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SignaIR.DataAccessLayer.Concrete;
 
 namespace SignaIR.DataAccessLayer.Migrations
 {
     [DbContext(typeof(SignalRContext))]
-    partial class SignalRContextModelSnapshot : ModelSnapshot
+    [Migration("20231128121343_mig_add_notification")]
+    partial class mig_add_notification
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -250,9 +252,6 @@ namespace SignaIR.DataAccessLayer.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Desciption")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Icon")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Status")

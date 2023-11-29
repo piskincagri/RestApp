@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace SignaIRWebUI.Controllers
@@ -34,5 +35,21 @@ namespace SignaIRWebUI.Controllers
 
             return View();
         }
+
+        public async Task<IActionResult> DeleteBasket(int id)
+        {
+
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.DeleteAsync($"https://localhost:44374/api/Basket/{id}");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+
+    }
+
+            return NoContent();
+
+}
+       
     }
 }
