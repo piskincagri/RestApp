@@ -13,6 +13,9 @@ namespace SignaIR.DataAccessLayer.Abstract
 
         List<Notification> GetAllNotificationByFalse();
 
+        void NotificationStatusChangeToTrue(int id);
+        void NotificationStatusChangeToFalse(int id);
+
 
 
 

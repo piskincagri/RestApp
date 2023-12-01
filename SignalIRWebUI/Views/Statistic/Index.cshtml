@@ -20,7 +20,7 @@
                     setInterval(() => {
                         connection.invoke("SendStatisticCount");
                         
-                    }, 1);
+                    }, 1000);
                 }).catch((err) => { console.log(err) });
 
                 connection.on("ReceiveCategoryCount", (value) => {

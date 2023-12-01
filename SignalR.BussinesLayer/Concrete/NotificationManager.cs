@@ -48,6 +48,17 @@ namespace SignalR.BussinesLayer.Concrete
             return _notificationDal.NotificationCountByStatusFalse();
         }
 
+        public void TNotificationStatusChangeToFalse(int id)
+        {
+            _notificationDal.NotificationStatusChangeToFalse(id);
+        }
+
+        public void TNotificationStatusChangeToTrue(int id)
+        {
+            _notificationDal.NotificationStatusChangeToTrue(id);
+
+        }
+
         public void TUpdate(Notification entitiy)
         {
             _notificationDal.Update(entitiy);

@@ -13,6 +13,9 @@ namespace SignalR.BussinesLayer.Abstract
 
         List<Notification> TGetAllNotificationByFalse();
 
+        void TNotificationStatusChangeToTrue(int id);
+        void TNotificationStatusChangeToFalse(int id);
+
 
     }
 }

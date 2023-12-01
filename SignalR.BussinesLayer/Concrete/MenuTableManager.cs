@@ -20,22 +20,22 @@ namespace SignalR.BussinesLayer.Concrete
 
         public void TAdd(MenuTable entitiy)
         {
-            throw new NotImplementedException();
+            _menuTableDal.Add(entitiy);
         }
 
         public void TDelete(MenuTable entitiy)
         {
-            throw new NotImplementedException();
+            _menuTableDal.Delete(entitiy);
         }
 
         public MenuTable TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _menuTableDal.GetByID(id);
         }
 
         public List<MenuTable> TGetListAll()
         {
-            throw new NotImplementedException();
+            return _menuTableDal.GetListAll();
         }
 
         public int TMenuTableCount()
@@ -45,7 +45,7 @@ namespace SignalR.BussinesLayer.Concrete
 
         public void TUpdate(MenuTable entitiy)
         {
-            throw new NotImplementedException();
+            _menuTableDal.Update(entitiy);
         }
     }
 }
