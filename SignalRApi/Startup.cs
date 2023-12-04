@@ -10,6 +10,7 @@ using Microsoft.OpenApi.Models;
 using SignaIR.DataAccessLayer.Abstract;
 using SignaIR.DataAccessLayer.Concrete;
 using SignaIR.DataAccessLayer.EntitiyFramework;
+using SignaIR.EntitiyLayer.Entities;
 using SignalR.BussinesLayer.Abstract;
 using SignalR.BussinesLayer.Concrete;
 using SignalRApi.Hubs;
@@ -46,9 +47,9 @@ namespace SignalRApi
 
 
              }));
-                    
-                    
 
+
+            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<SignalRContext>();
             services.AddDbContext<SignalRContext>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
@@ -101,7 +102,10 @@ namespace SignalRApi
             services.AddScoped<INotificationService, NotificationManager>();
             services.AddScoped<INotificationDal, EfNotificationDal>();
 
-          
+            services.AddScoped<IMessageService, MessageManager>();
+            services.AddScoped<IMessageDal, EfMessageDal>();
+
+
 
 
             services.AddControllers().AddJsonOptions(x =>

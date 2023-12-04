@@ -16,7 +16,7 @@
                         <div class="card-header">
                             <div class="card-title">İletişim Güncelleme Girişi</div>
                         </div>
-                        <input type="hidden" asp-for="ContactID"/>
+                        <input type="hidden" asp-for="ContactID" />
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="title">Lokasyon</label>
@@ -40,6 +40,45 @@
                             <div class="form-group">
                                 <label for="mail">Mail Adresi</label>
                                 <input type="email" rows="5" class="form-control" asp-for="Mail" id="mail">
+
+                            </div>
+
+
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="title">Alt Başlık</label>
+                                <input type="text" class="form-control" asp-for="FooterTitle" id="title">
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="days">Açık Günler</label>
+                                <input type="text" class="form-control" asp-for="OpenDays" id="days">
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="daysdescription">Açık Günler Açıklama</label>
+                                <input type="text" class="form-control" asp-for="OpenDaysDescription" id="daysdescription">
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="openhours">Açık Saatler</label>
+                                <input type="text" class="form-control" asp-for="OpenHours" id="openhours">
 
                             </div>
 

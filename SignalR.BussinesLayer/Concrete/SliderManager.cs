@@ -20,17 +20,17 @@ namespace SignalR.BussinesLayer.Concrete
 
         public void TAdd(Slider entitiy)
         {
-            throw new NotImplementedException();
+            _sliderDal.Add(entitiy);
         }
 
         public void TDelete(Slider entitiy)
         {
-            throw new NotImplementedException();
+            _sliderDal.Delete(entitiy);
         }
 
         public Slider TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _sliderDal.GetByID(id);
         }
 
         public List<Slider> TGetListAll()
@@ -40,7 +40,7 @@ namespace SignalR.BussinesLayer.Concrete
 
         public void TUpdate(Slider entitiy)
         {
-            throw new NotImplementedException();
+            _sliderDal.Update(entitiy);
         }
     }
 }

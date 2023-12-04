@@ -23,6 +23,16 @@ namespace SignalR.BussinesLayer.Concrete
             _discountDal.Add(entitiy);
         }
 
+        public void TChangeStatusToFalse(int id)
+        {
+            _discountDal.ChangeStatusToFalse(id);
+        }
+
+        public void TChangeStatusToTrue(int id)
+        {
+            _discountDal.ChangeStatusToTrue(id);
+        }
+
         public void TDelete(Discount entitiy)
         {
             _discountDal.Delete(entitiy);
@@ -36,6 +46,11 @@ namespace SignalR.BussinesLayer.Concrete
         public List<Discount> TGetListAll()
         {
             return _discountDal.GetListAll();
+        }
+
+        public List<Discount> TGetListByStatusTrue()
+        {
+            return _discountDal.GetListByStatusTrue();
         }
 
         public void TUpdate(Discount entitiy)
