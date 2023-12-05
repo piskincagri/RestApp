@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SignaIR.EntitiyLayer.Entities;
 using SignaIRWebUI.Dtos.IdentitiyDtos;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace SignaIRWebUI.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         private readonly SignInManager<AppUser> _signInManager;

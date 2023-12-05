@@ -1,6 +1,10 @@
+
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,7 +33,19 @@ namespace SignalIRWebUI
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<SignalRContext>();
             services.AddControllersWithViews();
             services.AddHttpClient();
-           
+            services.ConfigureApplicationCookie(opt => {
+
+                opt.LoginPath = "/Login/Index/";
+                        
+            });
+
+            services.AddMvc(config =>
+            {
+                var requireAuthorizePolicy = new AuthorizationPolicyBuilder()
+                    .RequireAuthenticatedUser()
+                    .Build();
+                config.Filters.Add(new AuthorizeFilter(requireAuthorizePolicy));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +66,9 @@ namespace SignalIRWebUI
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+        
 
             app.UseEndpoints(endpoints =>
             {
