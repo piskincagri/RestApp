@@ -24,5 +24,7 @@ namespace SignaIR.DataAccessLayer.Abstract
         string ProductNamePriceByMin();
 
         decimal ProductaAvgPriceByHamburger();
+
+        decimal ProductPriceBySteakBurger();
     }
 }

@@ -83,5 +83,10 @@ namespace SignalR.BussinesLayer.Concrete
         {
             return _productDal.ProductaAvgPriceByHamburger();
         }
+
+        public decimal TProductPriceBySteakBurger()
+        {
+            return _productDal.ProductPriceBySteakBurger();
+        }
     }
 }

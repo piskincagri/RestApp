@@ -69,6 +69,10 @@ namespace SignaIR.DataAccessLayer.EntitiyFramework
             return context.Products.Average(x => x.Price);
         }
 
-      
+        public decimal ProductPriceBySteakBurger()
+        {
+            using var context = new SignalRContext();
+            return context.Products.Where(x => x.ProductName == "Steak Burger").Select(y => y.Price).FirstOrDefault();
+        }
     }
 }

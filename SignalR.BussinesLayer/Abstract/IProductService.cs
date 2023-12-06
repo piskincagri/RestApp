@@ -26,5 +26,7 @@ namespace SignalR.BussinesLayer.Abstract
 
         public decimal TProductAvgPriceByHamburger();
 
+        public decimal TProductPriceBySteakBurger();
+
     }
 }

@@ -36,7 +36,7 @@ namespace SignaIRWebUI.Controllers
             mimeMessage.Subject= createMailDto.Subject;
 
             SmtpClient client = new SmtpClient();
-            client.Connect("smtp.hotmail.com", 587, false);
+            client.Connect("smtp.office365.com", 587, false);
             client.Authenticate("cagri33@hotmail.com", "Atlas-02");
 
             client.Send(mimeMessage);
