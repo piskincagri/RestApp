@@ -17,7 +17,7 @@ namespace SignaIRWebUI.Dtos.IdentitiyDtos
 
         public string Password { get; set; }
 
-        public sbyte ConfirmPassword { get; set; }
+        public string ConfirmPassword { get; set; }
 
     }
 }
