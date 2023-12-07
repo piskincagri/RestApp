@@ -1,5 +1,5 @@
 ﻿
-@model             List<ResultContactDto>
+@model  List<ResultContactDto>
 @foreach (var item in Model)
 {
 <footer class="footer_section">
@@ -57,8 +57,8 @@
         </div>
         <div class="footer-info">
             <p>
-                &copy; <span id="displayYear"></span> Tüm Hakları Saklıdır.
-                <a href="https://html.design/">Design by "Piskin's Software"</a>
+                &copy; <span>@DateTime.Now.Year</span> Tüm Hakları Saklıdır.
+                <a href="https://piskinsoftware.com.tr/">Design by "Piskin's Software"</a>
             </p>
         </div>
     </div>

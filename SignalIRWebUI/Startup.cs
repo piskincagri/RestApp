@@ -35,7 +35,7 @@ namespace SignalIRWebUI
             services.AddHttpClient();
             services.ConfigureApplicationCookie(opt => {
 
-                opt.LoginPath = "/Default/Index/";
+                opt.LoginPath = "/Login/Index/";
                         
             });
 

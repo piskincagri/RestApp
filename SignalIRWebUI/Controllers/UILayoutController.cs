@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SignaIRWebUI.Controllers
 {
-    [AllowAnonymous]
+  
     public class UILayoutController : Controller
     {
         public IActionResult Index()
