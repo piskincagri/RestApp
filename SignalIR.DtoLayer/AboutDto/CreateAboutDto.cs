@@ -16,5 +16,10 @@ namespace SignaIR.DtoLayer.AboutDto
         public string Title { get; set; }
 
         public string Description { get; set; }
+        public string Description1 { get; set; }
+        public string Description2 { get; set; }
+        public string Description3 { get; set; }
+        public string Description4 { get; set; }
+        public string Description5 { get; set; }
     }
 }
