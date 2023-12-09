@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SignaIRWebUI.Dtos.TestimonialDtos;
 using System;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace SignaIRWebUI.Controllers
 {
+   
     public class TestimonialController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
@@ -21,7 +23,7 @@ namespace SignaIRWebUI.Controllers
 
         public async Task<IActionResult> Index()
         {
-
+            
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:44374/api/Testimonial");
             if (responseMessage.IsSuccessStatusCode)
@@ -98,7 +100,7 @@ namespace SignaIRWebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateTestimonial(UpdateTestimonialDto updateTestimonialDto)
         {
-            updateTestimonialDto.Status = true;
+           
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(updateTestimonialDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");

@@ -25,13 +25,13 @@
                     <div class="form_container">
                         <form method="post">
                             <div>
-                                <input type="text" class="form-control" placeholder="Adınız Soyadınız" asp-for="Name"/>
+                                <input type="text" class="form-control" placeholder="Adınız Soyadınız" asp-for="Name" />
                             </div>
                             <div>
                                 <input type="text" class="form-control" placeholder="Telefon Numaranız" asp-for="Phone" />
                             </div>
                             <div>
-                                <input type="email" class="form-control" placeholder="Email Adresiniz" asp-for="Mail"/>
+                                <input type="email" class="form-control" placeholder="Email Adresiniz" asp-for="Mail" />
                             </div>
                             <div>
                                 <select asp-for="PersonCount" class="form-control nice-select wide">
@@ -78,6 +78,7 @@
         </div>
     </section>
     <!-- end book section -->
+    @await Component.InvokeAsync("_DefaultTestimonialComponentPartial")
     <!-- footer section -->
     @await Component.InvokeAsync("_UILayoutFooterComponentPartial")
     <!-- footer section -->
