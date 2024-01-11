@@ -22,7 +22,7 @@ namespace SignaIRWebUI.Controllers
         {
             MimeMessage mimeMessage = new MimeMessage();
 
-            MailboxAddress mailboxAddressFrom = new MailboxAddress("Banker's Burger Rezervasyon", "cagri33@hotmail.com");
+            MailboxAddress mailboxAddressFrom = new MailboxAddress("Banker's Burger Rezervasyon", "xxxx@hotmail.com");
             mimeMessage.From.Add(mailboxAddressFrom);
 
             MailboxAddress mailboxAddressTo = new MailboxAddress("User", createMailDto.ReciverMail);
@@ -37,7 +37,7 @@ namespace SignaIRWebUI.Controllers
 
             SmtpClient client = new SmtpClient();
             client.Connect("smtp.office365.com", 587, false);
-            client.Authenticate("cagri33@hotmail.com", "Atlas-02");
+            client.Authenticate("xxxx@hotmail.com", "password");
 
             client.Send(mimeMessage);
             client.Disconnect(true);
